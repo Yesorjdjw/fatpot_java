@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:background="#fff"
-	android:id="@+id/line0ne"
-	>
-<LinearLayout 
-	android:orientation="horizontal"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:gravity="center"
-	>
-<Button 
-	android:id="@+id/play"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:text="@string/play"/>
-<Button 
-	android:id="@+id/stop"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:text="@string/stop"/>	
-<Button 
-	android:id="@+id/jump"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:text="@string/jump"/>
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFF3E0"
+        android:id="@+id/line0ne">
 
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
+        <Button
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play"/>
 
-</LinearLayout>
-<ImageView  
-	android:id="@+id/anim"
-	android:layout_width="wrap_content" 
-	android:layout_height="wrap_content" 
-	android:background="@anim/fat_po"
-	android:scaleType="center"
-	/>
+        <Button
+                android:id="@+id/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stop"/>
+
+        <Button
+                android:id="@+id/ultimate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ultimate"/>
+
+    </LinearLayout>
+
+    <ImageView
+            android:id="@+id/anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@anim/fat_po"
+            android:scaleType="center"/>
 </LinearLayout>
