@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/line0ne"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/kongfu"
+    android:orientation="vertical" >
+
+<LinearLayout 
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	>
+<Button 
+	android:id="@+id/play"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="@string/play"/>
+<Button 
+	android:id="@+id/stop"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="@string/stop"/>	
+<Button 
+	android:id="@+id/jump"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="@string/jump"/>
+
+<Button
+    android:id="@+id/dazhao"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:onClick="dazhao"
+    android:text="@string/dazhao" />
+
+</LinearLayout>
+<ImageView  
+	android:id="@+id/anim"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content" 
+	android:background="@anim/fat_po"
+	android:scaleType="center"
+	/>
+</LinearLayout>
