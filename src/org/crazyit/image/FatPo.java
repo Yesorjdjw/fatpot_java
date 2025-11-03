@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
 
 
 /**
@@ -21,57 +25,65 @@ import android.widget.ImageView;
  * @version  1.0
  */
 @SuppressLint("NewApi")
-public class FatPo extends Activity
-{
-	int timenum=1;
-	
-	@Override
-	
-	public void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-		// 获取两个按钮
-		Button play = (Button) findViewById(R.id.play);
-		Button stop = (Button) findViewById(R.id.stop);
-		Button dazhao = (Button) findViewById(R.id.dazhao);
-		
-		final ImageView imageView = (ImageView) findViewById(R.id.anim);
-		// 获取AnimationDrawable动画对象
-		final AnimationDrawable anim = (AnimationDrawable) imageView
-				.getBackground();
-		play.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				// 开始播放动画
-				anim.start();
-			}
-		});
-		stop.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				// 停止播放动画
-				anim.stop();
-			}
-		});
-		ultimate.setOnClickListener(new OnClickListener()
-        {
-                @Override
-                public void onClick(View v)
-                {
-                        imageView.animate()
-                                        .translationXBy(imageView.getWidth())
-                                        .translationYBy(-imageView.getHeight() / 3f)
-                                        .scaleX(1.6f)
-                                        .scaleY(1.6f)
-                                        .setDuration(600)
-                                        .start();
-                }
-        });
-		
-	}
+    public class FatPo extends Activity
+    {
+    	int timenum=1;
+    	
+    	@Override
+    	
+    	public void onCreate(Bundle savedInstanceState)
+    	{
+    		super.onCreate(savedInstanceState);
+    		setContentView(R.layout.main);
+    		// 取钮
+    		Button play = (Button) findViewById(R.id.play);
+    		Button stop = (Button) findViewById(R.id.stop);
+    		Button dazhao = (Button) findViewById(R.id.dazhao);
+    		
+    		final ImageView imageView = (ImageView) findViewById(R.id.anim);
+    		// 取AnimationDrawable
+    		final AnimationDrawable anim = (AnimationDrawable) imageView
+    				.getBackground();
+    		play.setOnClickListener(new OnClickListener()
+    		{
+    			@Override
+    			public void onClick(View v)
+    			{
+    				// 始哦
+    				anim.start();
+    			}
+    		});
+    		stop.setOnClickListener(new OnClickListener()
+    		{
+    			@Override
+    			public void onClick(View v)
+    			{
+    				// 停止哦
+    				anim.stop();
+    			}
+    		});
+    	}
+    		
+    public void dazhao(View view) {
+            if (animImageView == null) {
+                    return;
+            }
+            AnimationSet animationSet = new AnimationSet(true);
+            animationSet.setDuration(600);
+            animationSet.setFillAfter(true);
+
+            float translationX = animImageView.getWidth();
+            float translationY = -animImageView.getHeight() / 3f;
+
+            TranslateAnimation translateAnimation = new TranslateAnimation(0,
+                            translationX, 0, translationY);
+            ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.6f, 1.0f,
+                            1.6f, Animation.RELATIVE_TO_SELF, 0.5f,
+                            Animation.RELATIVE_TO_SELF, 0.5f);
+
+            animationSet.addAnimation(translateAnimation);
+            animationSet.addAnimation(scaleAnimation);
+
+            animImageView.startAnimation(animationSet);
+    }
 }
